@@ -1,4 +1,5 @@
 # IMU-platform
+## Imtroduction
 This platform integrates one or more IMU terminal devices and analyzes the IMU data through analysis algorithms to achieve the purpose of gait estimation and trajectory tracking.
 <br>
 <br>
@@ -9,3 +10,16 @@ Back-end functions include IMU 9-axis data library, sensor information, UUID gen
 <br>
 <br>
 Sensor side functions include data capture system, calibration algorithm, SPIFFS, Wifi manager system, POST/GET method, WebSocket client, and other functional modules on the sensor side. Through a special topology network, you can freely adjust different numbers of sensor groups.
+
+## Implementation process
+### Lasted updated 20210929
+#### Sensor to server flow
+1. The sensor sends a connection request
+2. The platform distributes UUID to the sensor
+3. The sensor performs calibration and data capture work
+4. After capturing, POST the data to the backend for storage
+5. Draw the captured data to the front end chart
+
+#### Sensor group building
+
+#### Analysis algorithm
