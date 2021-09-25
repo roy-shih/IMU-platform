@@ -1,3 +1,8 @@
+# System Architure
+
+<br><img width="617" alt="截圖 2021-09-25 下午11 13 42" src="https://user-images.githubusercontent.com/79713835/134776388-afe5ad38-1eae-4189-8909-0291174b4d0a.png">
+
+
 # Frontend system design
 1. Sensor Group設定
    1. 已設定區
