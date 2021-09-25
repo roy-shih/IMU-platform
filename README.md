@@ -1,5 +1,5 @@
 # IMU-platform
-This platform integrates the data of one or more IMU terminal devices, and analyzes the IMU through analysis algorithms to achieve the purpose of gait estimation and trajectory tracking.
+This platform integrates one or more IMU terminal devices, and analyzes the IMU data through analysis algorithms to achieve the purpose of gait estimation and trajectory tracking.
 <br>
 <br>The architecture of the platform is divided into front end, back end and sensor end. Front-end functions include various functional interfaces such as device status monitor, device grouping interface, and data analysis result chart. For users (such as physicians) to easily adjust the grouping status of the sensors and observe the real-time analysis results of the subjects.
 <br>
