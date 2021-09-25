@@ -3,6 +3,7 @@
     1. 感測器群的連接方式
         1. Subsystem design: IDEF0 & Grafcet
         2. To-do
+            - [ ]  FreeRTOS
             - [X]  Wifimanager
             - [X]  Sensor built-in calibration algorithm
             - [X]  SPIFFS(SPI Flash File System)
