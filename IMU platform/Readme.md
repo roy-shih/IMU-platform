@@ -5,8 +5,9 @@
 
 # Frontend system design
 1. Sensor Group設定
-   <img width="585" alt="截圖 2021-09-25 下午11 16 01" src="https://user-images.githubusercontent.com/79713835/134776462-28e003e9-9d4d-438f-806c-e9862d7c655c.png">
-   1. 已設定區
+   1. Wireframe
+      <br><img width="585" alt="截圖 2021-09-25 下午11 16 01" src="https://user-images.githubusercontent.com/79713835/134776462-28e003e9-9d4d-438f-806c-e9862d7c655c.png">
+   2. 已設定區
       1. UUID（群組名）
       2. 設備號
       3. 位置
@@ -14,7 +15,7 @@
       5. 設置介面
          1. 調整位置
          2. 離開群組
-   2. 未設定區
+   3. 未設定區
       1. 加入群組（下拉式群組列表）
 2. 顯示分析畫面
 # Backend system design
