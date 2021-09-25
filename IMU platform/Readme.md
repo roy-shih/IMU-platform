@@ -6,8 +6,9 @@
 # Frontend system design
 1. Sensor Group設定
    1. Wireframe
-      <br><img width="585" alt="截圖 2021-09-25 下午11 16 01" src="https://user-images.githubusercontent.com/79713835/134776462-28e003e9-9d4d-438f-806c-e9862d7c655c.png">
+      <br><img width="416" alt="截圖 2021-09-25 下午11 24 48" src="https://user-images.githubusercontent.com/79713835/134776714-6da5ebe2-221e-44a8-b6fc-7edf1c41d5b8.png">
    2. 已設定區
+
       1. UUID（群組名）
       2. 設備號
       3. 位置
