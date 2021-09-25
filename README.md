@@ -1,8 +1,7 @@
 # IMU-platform
 1. Sensor group design
     1. Subsystem design: Grafcet
-
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e5192fd6-1043-4ea8-b847-5d503d8aeecd/Untitled.png)
+        <img width="649" alt="截圖 2021-09-25 下午10 52 29" src="https://user-images.githubusercontent.com/79713835/134775714-e222b4dc-8960-4bc2-bfbd-4b2f3beb7913.png">
 
     2. System Module To-do
         - [ ]  FreeRTOS
