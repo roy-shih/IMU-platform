@@ -21,5 +21,6 @@ Sensor side functions include data capture system, calibration algorithm, SPIFFS
 5. Draw the captured data to the front end chart
 
 #### Sensor group building
-
+(To do)
 #### Analysis algorithm
+(To do)
