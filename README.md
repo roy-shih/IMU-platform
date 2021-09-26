@@ -13,6 +13,10 @@ Sensor side functions include data capture system, calibration algorithm, SPIFFS
 
 ## Implementation process
 ### Lasted updated 20210929
+
+#### Information Flow
+<img width="561" alt="截圖 2021-09-27 上午3 30 11" src="https://user-images.githubusercontent.com/79713835/134821561-2d9ed5cd-cf58-4b89-9fa1-886edc2a9997.png">
+
 #### Sensor to server flow
 1. The sensor sends a connection request
 2. The platform distributes UUID to the sensor
