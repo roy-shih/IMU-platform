@@ -61,17 +61,15 @@ def PostAPI(request):
             payload = json.loads(request.body)
             print(payload)
             DEVICEID = payload['DEVICE_ID']
-            TYPE = payload['TYPE']
-            VALUE = float(payload['VALUE'])
+            # TYPE = payload['TYPE']
+            VALUE = str(payload['VALUE'])
             print(DEVICEID, VALUE)
         except:
             DEVICEID = str(request.POST.get('DEVICE_ID'))
-            TYPE = str(request.POST.get('TYPE'))
-            VALUE = float(request.POST.get('VALUE'))
+            # TYPE = str(request.POST.get('TYPE'))
+            VALUE = str(request.POST.get('VALUE'))
             print(DEVICEID, VALUE)
-
-        # Type '':
-
+        #find device
         try:
             choose = Device.objects.get(Device_ID=DEVICEID)
         except:
@@ -79,7 +77,7 @@ def PostAPI(request):
             return HttpResponse(response, content_type='text/json')
         # print(choose)
         # print("old", choose.value)
-        choose.value = VALUE
+        choose.DATA = VALUE
         choose.save()
         # print("new", choose.value)
         # response = json.dumps([{'Success': 'Data added successfully!'}])
