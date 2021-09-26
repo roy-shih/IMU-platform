@@ -22,6 +22,7 @@
 # Backend system design
 1. 系統
     1. data models
+       <img width="1440" alt="截圖 2021-09-26 下午7 52 24" src="https://user-images.githubusercontent.com/79713835/134806577-2112ebca-f9f0-43a3-9de4-d6bd4cccc5d4.png">
         1. Device
             1. Device ID： Char
             2. Group UUID： Char
@@ -34,6 +35,7 @@
     2. API
         1. POST: receive data from the sensor group leader
         2. GET: Return the device info to the requester.
+           <img width="1438" alt="截圖 2021-09-26 下午7 51 59" src="https://user-images.githubusercontent.com/79713835/134806537-5469b7cc-15a9-4fbd-a9c6-28516e7324b6.png">
     3.  Frontend Render
         1. 步態分析
         2. 軌跡圖
