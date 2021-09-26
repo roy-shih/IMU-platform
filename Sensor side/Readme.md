@@ -1,6 +1,6 @@
 # Sensor group design
 1. Subsystem design: Grafcet
-        <br><img width="649" alt="截圖 2021-09-25 下午10 52 29" src="https://user-images.githubusercontent.com/79713835/134775714-e222b4dc-8960-4bc2-bfbd-4b2f3beb7913.png">
+        <br><img width="661" alt="截圖 2021-09-27 上午3 30 34" src="https://user-images.githubusercontent.com/79713835/134821572-f6c41fff-18aa-4a29-9d07-76393c6bd3b7.png">
 
 2. System Module To-do
     - [x]  FreeRTOS
