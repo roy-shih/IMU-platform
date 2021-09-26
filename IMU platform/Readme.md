@@ -34,7 +34,8 @@
             3. Trajectory graph： png
     2. API
         1. POST: receive data from the sensor group leader
-        2. GET: Return the device info to the requester.
+           <img width="1440" alt="截圖 2021-09-27 上午12 00 21" src="https://user-images.githubusercontent.com/79713835/134815245-b75e8bfc-a956-4c25-8845-42227e2dfe54.png">
+        3. GET: Return the device info to the requester.
            <img width="1438" alt="截圖 2021-09-26 下午7 51 59" src="https://user-images.githubusercontent.com/79713835/134806537-5469b7cc-15a9-4fbd-a9c6-28516e7324b6.png">
     3.  Frontend Render
         1. 步態分析
