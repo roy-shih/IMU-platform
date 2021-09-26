@@ -15,3 +15,6 @@
 4. Hardware To-do
     - [ ]  顯示網路連接、是否加入群組等狀態：RGB LED
     - [ ]  顯示群組：RGB LED、tiny OLED screen
+
+# System time diagram
+![image](https://user-images.githubusercontent.com/79713835/134807612-a4871dc7-acc6-4ed8-a8de-0ee5924df51f.png) 
