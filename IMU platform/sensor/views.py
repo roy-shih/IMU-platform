@@ -8,7 +8,7 @@ import numpy as np
 from django.http import response, HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
-from models import Device, Data
+from .models import Device, Data
 
 import uuid
 # Create your views here.

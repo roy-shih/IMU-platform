@@ -6,7 +6,7 @@ from multiselectfield import MultiSelectField
 # Create your models here.
 
 
-class Device(models):
+class Device(models.Model):
     STATIC_CHOICES = (('右腳踝', u'右腳踝'), ('左腳踝', u'左腳踝'), ('右膝蓋', u'右膝蓋'),
                       ('左膝蓋', u'左膝蓋'), ('右大腿', u'右大腿'), ('左大腿', u'左大腿'), ('腰', u'腰'))
     Device_ID = CharField(max_length=100)
@@ -19,7 +19,7 @@ class Device(models):
         return self.name+"-"+self.UUID
 
 
-class Data(models):
+class Data(models.Model):
     STATIC_CHOICES = (('右腳踝', u'右腳踝'), ('左腳踝', u'左腳踝'), ('右膝蓋', u'右膝蓋'),
                       ('左膝蓋', u'左膝蓋'), ('右大腿', u'右大腿'), ('左大腿', u'左大腿'), ('腰', u'腰'))
     Device_ID = CharField(max_length=100)
