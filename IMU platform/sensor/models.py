@@ -16,7 +16,7 @@ class Device(models.Model):
     Leader_IP = CharField(max_length=300)
 
     def __str__(self):
-        return self.name+"-"+self.UUID
+        return self.Device_ID+"-"+self.UUID
 
 
 class Data(models.Model):
@@ -30,4 +30,4 @@ class Data(models.Model):
     DATA = CharField(max_length=10000)
 
     def __str__(self):
-        return self.name+"-"+self.UUID+"-"+self.DATE
+        return self.Device_ID+"-"+self.UUID+"-"+self.DATE
