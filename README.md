@@ -1,5 +1,5 @@
 # IMU-platform
-## Imtroduction
+## Itroduction
 This platform integrates one or more IMU terminal devices and analyzes the IMU data through analysis algorithms to achieve the purpose of gait estimation and trajectory tracking.
 <br>
 <br>
