@@ -1,5 +1,5 @@
 {
-    "type": "imu",
+    "type": "IMU",
     "version": 1,
     "host": "raw.githubusercontent.com",
     "port": 443,
