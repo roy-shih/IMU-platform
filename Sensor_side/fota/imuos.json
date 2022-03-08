@@ -3,5 +3,5 @@
     "version": 3,
     "host": "raw.githubusercontent.com",
     "port": 443,
-    "bin": "/roy-shih/IMU-platform/master/Sensor side/fota/imuos.bin"
+    "bin": "/roy-shih/IMU-platform/master/Sensor_side/fota/imuos.bin"
 }
