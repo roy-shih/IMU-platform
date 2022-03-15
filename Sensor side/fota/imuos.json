@@ -1,7 +1,0 @@
-{
-    "type": "imu",
-    "version": 1,
-    "host": "raw.githubusercontent.com",
-    "port": 443,
-    "bin": "/roy-shih/IMU-platform/master/Sensor side/fota/imuos.bin"
-}
