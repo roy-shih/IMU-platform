@@ -1,5 +1,5 @@
 """
-ASGI config for IMU_server project.
+ASGI config for IOT_proj project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -10,7 +10,13 @@ https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/
 import os
 
 from django.core.asgi import get_asgi_application
+from channels.routing import ProtocolTypeRouter, URLRouter
+from channels.auth import AuthMiddlewareStack
+from device.routing import ws_urlpatterns
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IMU_server.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IOT_proj.settings')
 
-application = get_asgi_application()
+application = ProtocolTypeRouter({
+    'http': get_asgi_application(),
+    'websocket': AuthMiddlewareStack(URLRouter(ws_urlpatterns))
+})

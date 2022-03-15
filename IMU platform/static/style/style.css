@@ -1,0 +1,133 @@
+html,
+body {
+    height: 90%;
+}
+
+body {
+    display: flex;
+    /*使物件依序排列*/
+    flex-direction: column;
+    /*使物件垂直排列*/
+}
+
+.container {
+    flex-grow: 1;
+    /*可佔滿垂直剩餘的空間*/
+}
+
+.button {
+    /* padding: 15px 50px; */
+    width: 100px;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+    color: #fff;
+    background-color: #405555;
+    border: none;
+    border-radius: 5px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+/*.button:hover {background-color: #0f8b8d}*/
+
+.button:active {
+    background-color: #405555;
+    box-shadow: 2 2px #CDCDCD;
+    transform: translateY(2px);
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+    background: #fff;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper {
+    width: 100%;
+    /* height: 100%; */
+}
+
+.swiper-slide {
+    padding: 13px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 100%;
+    background-color: white;
+}
+
+.discript {
+    padding: 20px;
+    width: 100%;
+}
+
+.card-title {
+    margin: 0px;
+    margin-bottom: 15px;
+}
+
+.card-icon {
+    width: 20px;
+}
+
+h1 {
+    font-size: 30px !important;
+}
+
+.arrow {
+    display: inline;
+    margin-left: 10px;
+}
+
+.btn {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
+    transition: 0.3s !important;
+    margin: 10px !important;
+    background: inherit !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: 20px !important;
+    min-width: 175px !important;
+    /* max-width: 150px!important;  */
+    /* padding: 0px !important; */
+    /* 5px rounded corners */
+}
