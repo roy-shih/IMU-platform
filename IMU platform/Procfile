@@ -1,1 +1,0 @@
-web: gunicorn IOT_proj.asgi

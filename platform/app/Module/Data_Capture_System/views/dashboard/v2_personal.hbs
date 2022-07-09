@@ -1,0 +1,29 @@
+<!--
+HR(bpm) SPO2(%) TEMP(C) SBP(mmHG) DBP(mmHG) MAP(mmHG) RR(bpm)
+-->
+<base href="./">
+<div id="app" class="bg-light m-3">
+  <h1 class="mt-4"> {{ pid }} Dashboard</h1>
+  <!-- Single Element -->
+  <div id="service" class="mt-4 row">
+    <a class="btn" onclick="onStartButtonClick()">[Lifecare-10]</a>
+     <a class="btn" onclick="onStartButtonClickTEMP()">[temp.pal]</a>
+    <a class="btn" onclick="onStartButtonClickSRimu() ">[Seal Ring IMU]</a>
+    <a class="btn" onclick="onStartButtonClickSRtemp() ">[Seal Ring TEMP]</a>
+    <a class="btn" onclick="onStartButtonClickSRppg() ">[Seal Ring PPG]</a>
+  </div>
+</div>
+<link rel="stylesheet" href="css/dashboard-v2.css">
+<link rel="stylesheet" href="css/cute-alert.css">
+<script>
+  var pid_ = "{{ pid }}"
+</script>
+<script src="sw.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js" integrity="sha512-HrwQrg8S/xLPE6Qwe7XOghA/FOxX+tuVF4TxbvS73/zKJSs/b1gVl/P4MsdfTFWYFYg/ISVNYIINcg35Xvr6QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/web_ble.js"></script>
+<script src="js/cute-alert.js"></script>
+<script src="js/personal_page.js"></script>
+<script src="js/application.js"></script>
+<script src="js/chart_config.js"></script>

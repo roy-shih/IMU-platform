@@ -1,0 +1,92 @@
+#!/usr/bin/env node
+require("dotenv").config( );
+
+const fs   = require("fs");
+const path = require("path");
+
+const mysql = require("mysql2");
+const APPS = require("../install_apps");
+
+const { DB_HOST, DB_USER, DB_PASSWORD, DB_SCHEMA } = process.env;
+
+const ATTRIBUTE = {
+  // "PK": "PRIMARY KEY",
+  "NN": "NOT NULL",
+  "QN": "QUERY NOT NULL",
+  // "UN": "UNIQUE",
+  "ZF": "ZEROFILL",
+  "AI": "AUTO_INCREMENT",
+  // "G" : "GENERATED ALWAYS AS IDENTITY",
+}
+
+for(let app_name in APPS){
+  let app_path = path.join( __dirname, "../Module", APPS[app_name]);
+  let model_path = path.resolve( app_path, "model.js" );
+  if( ! fs.existsSync( model_path ) ){
+    throw { error: "This app don't have model.", app:app_name };
+  }
+
+  let models = require( model_path );
+  if( models === null ){
+    continue;
+  }
+  let model_structure = [ ];
+  for(let model_name in models){
+    let PKList = [ ];
+    let structure = [ ];
+
+    let model = models[ model_name ];
+    let name = `${app_name}_${model_name}`;
+
+    // Not a good way to do this
+    model.fields.unshift( { name: "id", type: "INT", PK:true, NN:true, AI:true} );
+    for( let field of model.fields ){
+      let sql = parse2SQL( field );
+      if( field['PK'] === true ){
+        PKList.push( field.name );
+      }
+      if( field['default'] ){
+        sql += ` DEFAULT ${field.default}`;
+      }
+      structure.push( sql );
+    }
+    let PKRes = PKList.length > 0 ? `,\n\tPRIMARY KEY (${PKList.map(v=>'\`'+ v + '\`').join(",")})\n` : ""; 
+    // console.log( structure.join(",\n") );
+    let create = `CREATE TABLE \`${DB_SCHEMA}\`.\`${name}\` (\n\t${structure.join(",\n\t")}${PKRes});`;
+    // console.log( create );
+    model_structure.push( create );
+    // fs.writeFileSync( path.resolve( app_path, ".migrate.sql" ), create );
+  }
+  fs.writeFileSync( path.resolve( app_path, ".migrate_cache" ), model_structure.join("\n\n") );
+}
+
+function parse2SQL( field ){
+  let dt = field.type;
+  let attr = Object.keys(ATTRIBUTE).map( v=>field[v] && ATTRIBUTE[v] ).filter( v=>v ).join(" "); 
+          //(field.attribute || []).map( v=>ATTRIBUTE[v] ).join(" ");
+
+  // Check type is vaild
+  if( ! /[a-zA-Z][\(\S+\)]?/.test( dt ) ){
+    // not vaild
+    throw { error: "This type is not vaild.", type: dt };
+  }
+  /* Example
+  CREATE TABLE `seal_irb`.`new_table` (
+    `id` INT UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+    `blob` TEXT BINARY NULL,
+   `sys` DATETIME NULL DEFAULT CURRENT_TIME, 
+    PRIMARY KEY (`id`),
+    UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
+  );
+
+  CREATE TABLE `seal_irb`.`new_table` (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `blob` TEXT BINARY NULL,
+    `sys` DATETIME NULL DEFAULT CURRENT_TIME,
+    PRIMARY KEY (`id`)
+  );
+
+  */
+  let struct = `\`${field.name}\` ${dt} ${attr}`;
+  return struct;
+}
