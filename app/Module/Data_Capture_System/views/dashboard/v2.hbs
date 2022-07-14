@@ -1,0 +1,39 @@
+<!-- ZoneTwelve here -->
+<!-- Another commits -->
+<!--
+HR(bpm) SPO2(%) TEMP(C) SBP(mmHG) DBP(mmHG) MAP(mmHG) RR(bpm)
+-->
+<base href="./">
+<div id="app" class="bg-light m-3">
+  <h1 class="mt-4">Dashboard</h1>
+  <!-- Single Element -->
+  <div id="service" class="mt-4 row">
+        <button class="btn btn-primary m-auto" onclick="connectimu(rightimu)">Right IMU</button>
+        <button class="btn btn-primary m-auto" onclick="connectimu(leftimu)">Left IMU</button>
+        <button class="btn btn-primary m-auto" onclick="rightimu.commond(0x01); leftimu.commond(0x01)">Start</button>
+        <button class="btn btn-primary m-auto" onclick="">Download</button>
+  </div>
+  <div class="mt-4 row">
+        <div class="chartbox">
+            <canvas id="myChart"></canvas>
+          </div>
+        <div class="chartbox">
+            <canvas id="myChart2"></canvas>
+        </div>
+    </div> 
+</div>
+<link rel="stylesheet" href="css/dashboard-v2.css">
+<link rel="stylesheet" href="css/cute-alert.css">
+<script src="sw.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js" integrity="sha512-HrwQrg8S/xLPE6Qwe7XOghA/FOxX+tuVF4TxbvS73/zKJSs/b1gVl/P4MsdfTFWYFYg/ISVNYIINcg35Xvr6QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/cute-alert.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/page.js"></script>
+<script src="js/application.js"></script>
+<script src="js/web_ble.js"></script>
+<script src="js/chart_config.js"></script>
+<script>
+  const rightimu = new ble_device('right', 0xA050, 0xA001,0xA001, seal_ring_imu_handler);
+  const leftimu = new ble_device('left', 0xA050, 0xA001,0xA001, seal_ring_imu_handler);
+</script>

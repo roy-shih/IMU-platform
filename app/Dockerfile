@@ -1,0 +1,16 @@
+FROM node:16.14.0
+ARG DB_HOST
+ARG DB_USER
+ARG DB_PASSWORD
+ARG DB_SCHEMA
+ENV DB_HOST=${DB_HOST}
+ENV DB_USER=${DB_USER}
+ENV DB_PASSWORD=${DB_PASSWORD}
+ENV DB_SCHEMA=${DB_SCHEMA}
+
+WORKDIR /usr/app
+COPY package.json .
+RUN env
+RUN npm install --quiet
+COPY . .
+RUN rm /usr/app/.env

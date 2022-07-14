@@ -1,0 +1,6 @@
+pid,height,weight,age,gender,bed,device,state,op_code
+p001,172,80,22,Male,1,1,1,0
+p002,120,30,9,Female,2,2,1,0
+p003,132,45,14,Female,3,3,1,0
+p004,175,95,20,Male,4,4,1,0
+ZoneTwelve,174,76,22,Man,12,12,1,0
