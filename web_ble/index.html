@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" class="bg-light m-3">
+    <h1 class="mt-4">IMU Dashboard</h1>
+    <!-- Single Element -->
+    <div id="service" class="mt-4 row">
+    <!-- <a class="btn" onclick="onStartButtonClickSRimu() ">[Seal Ring IMU]</a> -->
+    <!-- create a bootstrap button -->
+        <button class="btn btn-primary m-auto" onclick="connectimu(rightimu)">Right IMU</button>
+        <button class="btn btn-primary m-auto" onclick="connectimu(leftimu)">Left IMU</button>
+        <button class="btn btn-primary m-auto" onclick="rightimu.commond(0x01); leftimu.commond(0x01)">Start</button>
+        <button class="btn btn-primary m-auto" onclick="">Download</button>
+        
+    <!-- create a button -->
+    </div>
+    <div class="mt-4 row">
+        <div class="chartbox">
+            <canvas id="myChart"></canvas>
+          </div>
+        <div class="chartbox">
+            <canvas id="myChart2"></canvas>
+        </div>
+    </div> 
+    <!-- <link rel="stylesheet" href="css/dashboard-v2.css"> -->
+    <!-- <link rel="stylesheet" href="css/cute-alert.css"> -->
+    <link rel="stylesheet" href="/web_ble/css/dashboard-v2.css">
+    <link rel="stylesheet" href="/web_ble/css/cute-alert.css">
+    <!-- boostrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@2.0.0/dist/chartjs-plugin-streaming.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.1.0/dist/chartjs-adapter-luxon.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js" integrity="sha512-HrwQrg8S/xLPE6Qwe7XOghA/FOxX+tuVF4TxbvS73/zKJSs/b1gVl/P4MsdfTFWYFYg/ISVNYIINcg35Xvr6QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- <script src="js/dashboard.js"></script>
+<script src="js/page.js"></script>
+<script src="js/application.js"></script>
+<script src="js/chart_config.js"></script>
+<script src="js/web_ble.js"></script>
+<script src="js/cute-alert.js"></script>
+<script src="js/dashboard.js"></script> -->
+
+<script src="/web_ble/js/page.js"></script>
+<!-- <script src="/web_ble/js/application.js"></script> -->
+<script src="/web_ble/js/chart_config.js"></script>
+<script src="/web_ble/js/web_ble.js"></script>
+<script src="/web_ble/js/cute-alert.js"></script>
+<script>
+    const rightimu = new ble_device('right', 0xA050, 0xA001,"myChart", seal_ring_imu_handler);
+    const leftimu = new ble_device('left', 0xA050, 0xA001,"myChart2", seal_ring_imu_handler);
+</script>
+<script>
+
+  </script>
+</html>
